@@ -1,0 +1,18 @@
+<h2>Async pipes</h2>
+
+<app-dumb
+	*ngIf="user$ | async as user; else loading" 
+	[user]="user" 
+	(deleteName)="deleteNameOfUser($event)">
+</app-dumb>
+<ng-template #loading>loading...</ng-template>
+
+<!-- <p *ngIf="newUser$ | async as updatedUser">
+	
+</p> -->
+
+<div *ngFor="let item of array$ | async">
+	{{ item }}
+</div>
+
+
