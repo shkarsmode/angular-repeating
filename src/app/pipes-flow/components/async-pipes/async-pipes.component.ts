@@ -21,7 +21,7 @@ const obj: IUser = {
 export class AsyncPipesComponent {
 
     public name$: Observable<string> = of('Daniil').pipe(delay(1500));
-    public user$: Observable<IUser> = of(obj).pipe(delay(1500));
+    public user$: Observable<IUser> = of(obj).pipe(delay(1000));
 
     public array$: Observable<number[]> = of([1, 2, 3, 4, 5]).pipe(delay(1000));
 

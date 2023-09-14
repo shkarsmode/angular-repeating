@@ -1,7 +1,7 @@
 <h2>Async pipes</h2>
 
 <app-dumb
-	*ngIf="user$ | async as user; else loading" 
+	*ngIf="user$ | appAsync as user; else loading" 
 	[user]="user" 
 	(deleteName)="deleteNameOfUser($event)">
 </app-dumb>
@@ -14,5 +14,4 @@
 <div *ngFor="let item of array$ | async">
 	{{ item }}
 </div>
-
 
