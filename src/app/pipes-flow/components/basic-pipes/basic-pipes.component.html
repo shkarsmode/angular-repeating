@@ -1,0 +1,29 @@
+<h2>Basic pipes</h2>
+
+<code>
+	<p>{{ obj | json }}</p>
+	<p>{{ obj | json }}</p>
+	<p>{{ obj | json }}</p>
+</code>
+<pre>{{ obj | json }}</pre>
+
+<hr>
+
+<p>{{ text | uppercase }}</p>
+<p>{{ text | lowercase }}</p>
+<p>{{ text | titlecase }}</p>
+<p>{{ text | slice: -5 }}</p>
+<p>{{ array | slice: 1 : 4 | json }}</p>
+
+<hr>
+
+<p>{{ decimalNumber | number: '1.0-3' }}</p> <!-- 1.0-3 - defalut value of number pipe -->
+<p>{{ decimalNumber | number: '1.0-2' }}</p>
+<p>{{ decimalNumber | number: '2.0-2' }}</p>
+<p>{{ 1 / 6 | percent: '1.0-2' }}</p>
+
+<hr>
+
+<p>{{ 555.2 | currency: 'UAH' : 'symbol-narrow' : '2.2'}}</p>
+<p>{{ 6.55 | currency: 'EUR' }}</p>
+<p>{{ 1 | currency }}</p>
