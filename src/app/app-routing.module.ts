@@ -4,10 +4,16 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
     {
         path: 'pipes', 
-        loadChildren: () => import('./pipes-flow/pipes.module').then(m => m.PipesModule)
+        loadChildren: () => 
+            import('./pipes-flow/pipes.module').then(m => m.PipesModule)
     },
     {
-        path: '**', redirectTo: 'pipes'
+        path: 'directives', 
+        loadChildren: () => 
+            import('./directives-flow/directives.module').then(m => m.DirectivesModule)
+    },
+    {
+        path: '**', redirectTo: 'directives'
     }
 ];
 
