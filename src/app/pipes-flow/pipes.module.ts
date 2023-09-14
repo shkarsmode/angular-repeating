@@ -4,12 +4,15 @@ import { BasicPipesComponent } from './components/basic-pipes/basic-pipes.compon
 import { PipesRoutingModule } from './pipes-routing.module';
 import { PipesComponent } from './pipes.component';
 import { AppDatePipe } from './pipes/date.pipe';
+import { AsyncPipesComponent } from './components/async-pipes/async-pipes.component';
+import { DumbComponent } from './components/async-pipes/dumb/dumb.component';
+import { AppAsyncPipe } from './pipes/app-async.pipe';
 
 @NgModule({
     declarations: [
         PipesComponent, 
         BasicPipesComponent, 
-        AppDatePipe
+        AppDatePipe, AsyncPipesComponent, DumbComponent, AppAsyncPipe
     ],
     imports: [CommonModule, PipesRoutingModule],
     providers: [
