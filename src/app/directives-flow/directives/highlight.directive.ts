@@ -1,9 +1,14 @@
-import { Directive, HostBinding, HostListener } from '@angular/core';
+import { Directive, HostBinding, HostListener, Optional } from '@angular/core';
+import { AttributeDirectiveComponent } from '../components/attribute-directive/attribute-directive.component';
 
 @Directive({
-	selector: 'h1[appHighlight]',
+	selector: '[appHighlight]',
 })
 export class HighlightDirective {
+
+	constructor(
+		@Optional() private component: AttributeDirectiveComponent
+	) {}
 
 	@HostBinding('style.background')
 	public backgroundColor: string = 'none';
