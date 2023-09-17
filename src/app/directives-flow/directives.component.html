@@ -10,6 +10,8 @@
 				{{ preferredNamesOfTable[key] }}
 			</ng-template>
 		</ng-container>
+		<ng-template appTableCell="id" let-row>#{{ row.id }}</ng-template>
+		<ng-template appTableCell="name" let-row>{{ row.name.toUpperCase() }}</ng-template>
 	</app-table>
 	<app-structural-directive></app-structural-directive>
 	<app-attribute-directive appExample></app-attribute-directive>

@@ -10,9 +10,10 @@ import { ExampleDirective } from './directives/example.directive';
 import { ForDirective } from './directives/for.directive';
 import { HighlightDirective } from './directives/highlight.directive';
 import { IfRoleDirective } from './directives/role.directive';
-import { TableHeaderDirective } from './directives/table-headers.directive';
+import { TableHeaderDirective } from './directives/table-header.directive';
 import { TemplateDirective } from './directives/template.directive';
 import { TooltipDirective } from './directives/tooltip.directive';
+import { TableCellDirective } from './directives/table-cell.directive';
 
 @NgModule({
     declarations: [
@@ -27,6 +28,7 @@ import { TooltipDirective } from './directives/tooltip.directive';
         ForDirective,
         TableComponent,
         TableHeaderDirective,
+        TableCellDirective
     ],
     imports: [CommonModule, DirectivesRoutingModule]
 })

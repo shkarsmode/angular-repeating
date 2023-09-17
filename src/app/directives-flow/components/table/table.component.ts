@@ -1,5 +1,6 @@
 import { Component, ContentChildren, Input, QueryList, TemplateRef } from '@angular/core';
-import { TableHeaderDirective } from '../../directives/table-headers.directive';
+import { TableCellDirective } from '../../directives/table-cell.directive';
+import { TableHeaderDirective } from '../../directives/table-header.directive';
 
 @Component({
     selector: 'app-table',
@@ -10,14 +11,25 @@ export class TableComponent {
 
     @Input() tableContent: Array<{ [key: string]: string | number }> = [];
     @Input() tableHeaderKeys: Array<string> = [];
-    @ContentChildren(TableHeaderDirective) headerTemplates: QueryList<TableHeaderDirective>;
 
-    public getTemplateRefBasedOnName(header: string): TemplateRef<string> | undefined {
+    @ContentChildren(TableHeaderDirective) headerTemplates: QueryList<TableHeaderDirective>;
+    @ContentChildren(TableCellDirective) cellTemplates: QueryList<TableCellDirective>;
+
+    public getTemplateRefOfHeaderBasedOnName(colName: string): TemplateRef<string> | undefined {
         const tableHeaderDirective = 
             this.headerTemplates.find(
-                template => template.nameOfHeader === header.toLowerCase()
+                template => template.nameOfHeader === colName.toLowerCase()
             );
 
         return tableHeaderDirective?.templateRef;
+    }
+
+    public getTemplateRefOfCellBasedOnName(colName: string): TemplateRef<unknown> | undefined {
+        const tableCellDirective = 
+            this.cellTemplates.find(
+                template => template.appTableCell === colName.toLowerCase()
+            );
+
+        return tableCellDirective?.templateRef;
     }
 }

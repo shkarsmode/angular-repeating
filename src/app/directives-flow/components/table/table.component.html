@@ -1,19 +1,27 @@
 <ng-content selector="h2"></ng-content>
 <table>
 	<tr>
-		<th *ngFor="let header of tableHeaderKeys">
+		<th *ngFor="let col of tableHeaderKeys">
 			<ng-container 
-				*ngTemplateOutlet="getTemplateRefBasedOnName(header) || defaultHeaderName">
+				*ngTemplateOutlet="getTemplateRefOfHeaderBasedOnName(col) || defaultHeaderName">
 			</ng-container>
 			
 			<ng-template #defaultHeaderName>
-				{{ header }}
+				{{ col }}
 			</ng-template>
 		</th>
 	</tr>
-	<tr *ngFor="let content of tableContent">
-		<td *ngFor="let header of tableHeaderKeys">
-			{{ content[header]}}
+	<tr *ngFor="let row of tableContent">
+		<td *ngFor="let col of tableHeaderKeys">
+			<ng-container
+				*ngTemplateOutlet="
+					getTemplateRefOfCellBasedOnName(col) || defaultCellName; 
+					context: { $implicit: row }">
+			</ng-container>
+			
+			<ng-template #defaultCellName>
+				{{ row[col]}}
+			</ng-template>			
 		</td>
 	</tr>
 </table>
