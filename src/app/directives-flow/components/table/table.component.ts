@@ -13,7 +13,6 @@ export class TableComponent {
     @ContentChildren(TableHeaderDirective) headerTemplates: QueryList<TableHeaderDirective>;
 
     public getTemplateRefBasedOnName(header: string): TemplateRef<string> | undefined {
-        console.log(this.headerTemplates);
         const tableHeaderDirective = 
             this.headerTemplates.find(
                 template => template.nameOfHeader === header.toLowerCase()
