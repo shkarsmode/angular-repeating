@@ -1,6 +1,16 @@
 <h1 appHighlight appTooltip="directives">Directives</h1>
 
 <div class="wrap-content">
+	<app-table 
+		[tableHeaderKeys]="tableHeaderKeysSorted" 
+		[tableContent]="tableContent">
+		<h2>Table of Users</h2>
+		<ng-container *ngFor="let key of Object.keys(preferredNamesOfTable)">
+			<ng-template [appTableHeader]="key">
+				{{ preferredNamesOfTable[key] }}
+			</ng-template>
+		</ng-container>
+	</app-table>
 	<app-structural-directive></app-structural-directive>
 	<app-attribute-directive appExample></app-attribute-directive>
 </div>
