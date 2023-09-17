@@ -1,0 +1,8 @@
+<h2>Checking on admins rights</h2>
+<div *appIfRole="currentRole">
+	I'm an Admin
+</div>
+
+<div *appFor="let greet of array; index as i; skipFirst: false" >
+	{{ greet }}
+</div>
