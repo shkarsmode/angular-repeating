@@ -27,7 +27,7 @@ export class TableComponent {
     public getTemplateRefOfCellBasedOnName(colName: string): TemplateRef<unknown> | undefined {
         const tableCellDirective = 
             this.cellTemplates.find(
-                template => template.appTableCell === colName.toLowerCase()
+                template => template.tableCellName === colName.toLowerCase()
             );
 
         return tableCellDirective?.templateRef;

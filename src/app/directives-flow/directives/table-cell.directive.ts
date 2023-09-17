@@ -5,7 +5,11 @@ import { Directive, Input, TemplateRef } from '@angular/core';
 })
 export class TableCellDirective {
 
-    @Input() appTableCell: string = '';
+    public tableCellName: string = '';
+    @Input() set appTableCell(cell: string) {
+        this.tableCellName = cell.toLowerCase();
+    }
+
     constructor(
         public templateRef: TemplateRef<{$implicity: string}>
     ) {}
