@@ -1,0 +1,19 @@
+<ng-content selector="h2"></ng-content>
+<table>
+	<tr>
+		<th *ngFor="let header of tableHeaderKeys">
+			<ng-container 
+				*ngTemplateOutlet="getTemplateRefBasedOnName(header) || defaultHeaderName">
+			</ng-container>
+			
+			<ng-template #defaultHeaderName>
+				{{ header }}
+			</ng-template>
+		</th>
+	</tr>
+	<tr *ngFor="let content of tableContent">
+		<td *ngFor="let header of tableHeaderKeys">
+			{{ content[header]}}
+		</td>
+	</tr>
+</table>
