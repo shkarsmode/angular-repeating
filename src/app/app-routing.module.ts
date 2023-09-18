@@ -13,7 +13,12 @@ const routes: Routes = [
             import('./directives-flow/directives.module').then(m => m.DirectivesModule)
     },
     {
-        path: '**', redirectTo: 'directives'
+        path: 'typescipt', 
+        loadChildren: () => 
+            import('./typescript-flow/typescript.module').then(m => m.TypescriptModule)
+    },
+    {
+        path: '**', redirectTo: 'typescipt'
     }
 ];
 
